@@ -1,74 +1,302 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PORTFOGLIO SONA TEMGOUA</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frisk-Creative Agency & Portofolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Fr<span>i</span>sk</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="Projects.html">PROJECTS</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="#blog">BLOG</a></li>
+            </ul>
+        </nav>
+        <div class="search-icon">🔍</div>
+    </header>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo"><img src="../img/sonalogo.jpg" alt="Logo ST" class="rond">
-</div>
-    <div class="menu-icon" onclick="toggleNav()">☰</div>
-    <nav>
-      <ul>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="Projects.html">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- NAVIGATION MOBILE -->
-   <div id="menuToggle">
-  <nav class="mobile-nav" id="mobileNav">
-    <ul>
-      <li><a href="about.html" onclick="toggleNav()">À propos</a></li>
-      <li><a href="#projects" onclick="toggleNav()">Projets</a></li>
-      <li><a href="contact.html" onclick="toggleNav()">Contact</a></li>
-    </ul>
-  </nav>
-</div>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="content">
-      <h1>Bienvenue sur mon portfolio</h1>
-      <p>Je suis <strong>Sandrine SONA TEMGOUA,</strong>développeuse web passionnée par le frontend et le backend. Découvrez mes projets et mes compétences.</p>
-      <a href="#projects" class="cta-btn">Voir mes projets</a>
+<!-- Hero Section -->
+    <section class="hero-section">
+    <div class="hero-content">
+        <h1>We Make<br>Creative Things<br>Everyday</h1>
+        <p>We are digital agency that help immersive and<br>engaging user experiences that </p>
+        <button class="cta-button">VIEW OUR WORKS</button>
+        <!-- ✅ Contact info en dessous du bouton CTA -->
+        <div class="contact-info">
+            <div>Division St, New York,<br> NY 10002, USA</div>
+            <div>+1 (800) 123-654-987<br>info@mottoagency.com</div>
+        </div>
     </div>
-  </section>
+    <div class="hero-image">
+        <img src="image4.jpg" alt="women working on computer">
+    </div>
+</section>
 
-  <!-- À PROPOS -->
-  <section id="about" class="fade-in">
-    <h2>À propos</h2>
-    <p>Je suis Sona TEMGOUA, développeur web créatif et motivée. J'aime créer des expériences web modernes et réactives.</p>
-  </section>
+    <!-- Bandeau animé -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+            </div>
+        </div>
+    </div>
 
-  <!-- PROJETS -->
-  <section id="projects" class="fade-in">
-    <h2>Projets</h2>
-    <p>Ici, vous pouvez présenter vos projets avec des images, descriptions et liens.</p>
-  </section>
+    <!-- Services Section -->
+    <section class="services-section">
+        <h2>What We Can Do for<br>Our Clients</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Branding Design</h3>
+                <p>Visual identity</p>
+                <a href="#" class="read-more">VIEW MORE →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Website Development</h3>
+                <p>Website Development</p>
+                <a href="#" class="read-more">VIEW MORE →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✏️</div>
+                <h3>Illustration Modelling</h3>
+                <p>Brand illustrations</p>
+                <a href="#" class="read-more">VIEW MORE →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Digital Marketing</h3>
+                <p>Social marketing</p>
+                <a href="#" class="read-more">VIEW MORE →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Brand Services -->
+    <section class="brand-services">
+        <div class="brand-image"></div>
+        <div class="brand-content">
+            <h2>We Offer a Wide Range of Brand Services</h2>
+            <p>We are a strategy-driven tech company with a strong startup mindset. Building digital products isn't really our job—it's what we love.</p>
+            <ul class="service-list">
+                <li><span>BRANDING</span><span>90%</span></li>
+                <li><span>DESIGNING</span><span>95%</span></li>
+                <li><span>DEVELOPMENT</span><span>89%</span></li>
+                <li><span>MARKETING</span><span>92%</span></li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Vous pouvez me contacter via email, LinkedIn ou tout autre réseau.</p>
-  </section>
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2>Discover Our Selected<br>Projects</h2>
+        <div class="projects-carousel">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=400&fit=crop" alt="Project 1">
+                <div class="project-info">
+                    <div class="project-category">Branding</div>
+                    <div class="project-title">Creative Portfolio</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&h=400&fit=crop" alt="Project 2">
+                <div class="project-info">
+                    <div class="project-category">Branding</div>
+                    <div class="project-title">Decentralized Platform</div>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=400&fit=crop" alt="Project 3">
+                <div class="project-info">
+                    <div class="project-category">Design</div>
+                    <div class="project-title">Modern App</div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
 
-  <div class="parent">
-    <div class="enfant"> enfant 1</div>
-    <div class="enfant">enfant 2</div>
-    <div class="enfant">enfant 3</div>
-  </div>
-  
-  <script src="script.js"></script>
+    <!-- Awards Section -->
+    <section class="awards-section">
+        <div class="awards-list">
+            <div class="award-item">
+                <div class="award-year">2021</div>
+                <div>
+                    <div class="award-name">New York Design Week</div>
+                    <div class="award-description">We bring 15 yrs. in the digital media & projects, launched etc.</div>
+                </div>
+                <div class="award-tag">WALLCREATIVEAWARD</div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2020</div>
+                <div>
+                    <div class="award-name">The Blue Design Awards</div>
+                    <div class="award-description">We bring 15 yrs. in the digital media & projects, launched etc.</div>
+                </div>
+                <div class="award-tag">JUNGHOLLOW</div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2019</div>
+                <div>
+                    <div class="award-name">Beast Web Flow</div>
+                    <div class="award-description">We bring 15 yrs. in the digital media & projects, launched etc.</div>
+                </div>
+                <div class="award-tag">WALLCREATIVEAWARD</div>
+            </div>
+            <div class="award-item">
+                <div class="award-year">2018</div>
+                <div>
+                    <div class="award-name">Berlin Interactive Award</div>
+                    <div class="award-description">We bring 15 yrs. in the digital media & projects, launched etc.</div>
+                </div>
+                <div class="award-tag">BRESTRIANCOLION</div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Team Video Section -->
+    <section class="team-video-section">
+        <!-- Image de fond -->
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop" 
+             alt="Team working together" 
+             class="video-background">
+        
+        <!-- Overlay optionnel -->
+        <div class="video-overlay"></div>
+        
+        <!-- Bouton Play -->
+        <div class="play-button" onclick="openVideo()">
+            <span class="play-text">PLAY VIDEO</span>
+        </div>
+    </section>
 
+    <!-- Modal pour la vidéo -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeVideo()">✕</button>
+            <iframe id="videoFrame" 
+                    src="about:blank" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
 
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2>Read Our Articles and<br>News</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=300&fit=crop" alt="Article 1">
+                <div class="blog-content">
+                    <div class="blog-date">OCTOBER 8, 2023</div>
+                    <h3>How to Make a Perfect Workspace That Fits You</h3>
+                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=400&h=300&fit=crop" alt="Article 2">
+                <div class="blog-content">
+                    <div class="blog-date">OCTOBER 5, 2023</div>
+                    <h3>The Secret to Become The Best Founder Ever</h3>
+                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" alt="Article 3">
+                <div class="blog-content">
+                    <div class="blog-date">OCTOBER 2, 2023</div>
+                    <h3>5 Success of Company in Modern Technology</h3>
+                    <a href="#" class="read-more">READ MORE →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="partners-grid">
+            <div class="partner-logo">brightlocal</div>
+            <div class="partner-logo">LOGO</div>
+            <div class="partner-logo">⚡</div>
+            <div class="partner-logo">MAZE</div>
+            <div class="partner-logo">∞</div>
+            <div class="partner-logo">LeadPages</div>
+            <div class="partner-logo">••• ••</div>
+            <div class="partner-logo">Enterprise</div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Let's Create<br>Something Great</h2>
+        <p>Do you want to have a website that stands out and impresses your clients?</p>
+        <button class="cta-button-dark">LET'S GET STARTED</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-newsletter">
+                <h3>Get valuable strategy, culture and brand insights straight to your inbox</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email here" required>
+                    <button type="submit">↗</button>
+                </form>
+                <p class="privacy-text">By signing up to receive emails from Motto, you agree to our Privacy Policy. We treat your info responsibly.</p>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>27 Division St, New York,<br>NY 10002, USA</p>
+                <p>+1 800 123 654 987</p>
+                <p>frisk.agency@mail.com</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolios">Portfolios</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Frisk</p>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+                <a href="#">🏀</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
