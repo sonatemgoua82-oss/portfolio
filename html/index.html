@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frisk-Creative Agency & Portofolio</title>
+    <title>Frisk-Creative Agency & Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,28 +17,35 @@
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="#blog">BLOG</a></li>
+                <li><a href="blog.html">BLOG</a></li>
             </ul>
         </nav>
-        <div class="search-icon">🔍</div>
+        <div class="search-icon" id="searchIcon">🔍</div>
+        <div class="search-container" id="searchContainer">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button id="closeSearch">✕</button>
+        </div>
     </header>
 
-<!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero-section">
-    <div class="hero-content">
-        <h1>We Make<br>Creative Things<br>Everyday</h1>
-        <p>We are digital agency that help immersive and<br>engaging user experiences that </p>
-        <button class="cta-button">VIEW OUR WORKS</button>
-        <!-- ✅ Contact info en dessous du bouton CTA -->
-        <div class="contact-info">
-            <div>Division St, New York,<br> NY 10002, USA</div>
-            <div>+1 (800) 123-654-987<br>info@mottoagency.com</div>
+        <div class="hero-content">
+<h1 class="stair-title">
+  <span>We Make</span>
+  <span>Creative Things</span>
+  <span>Everyday</span>
+</h1>
+<p>We are digital agency that help immersive and<br>engaging user experiences that </p>
+            <button class="cta-button">VIEW OUR WORKS</button>
+            <div class="contact-info">
+                <div>Division St, New York,<br> NY 10002, USA</div>
+                <div>+1 (800) 123-654-987<br>info@mottoagency.com</div>
+            </div>
         </div>
-    </div>
-    <div class="hero-image">
-        <img src="image4.jpg" alt="women working on computer">
-    </div>
-</section>
+        <div class="hero-image hero">
+            <img src="image4.jpg" alt="women working on computer">
+        </div>
+    </section>
 
     <!-- Bandeau animé -->
     <div class="banner">
@@ -86,7 +93,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Brand Services -->
     <section class="brand-services">
         <div class="brand-image"></div>
@@ -178,13 +185,13 @@
     <!-- Team Video Section -->
     <section class="team-video-section">
         <!-- Image de fond -->
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop" 
-             alt="Team working together" 
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&h=900&fit=crop"
+             alt="Team working together"
              class="video-background">
-        
+       
         <!-- Overlay optionnel -->
         <div class="video-overlay"></div>
-        
+       
         <!-- Bouton Play -->
         <div class="play-button" onclick="openVideo()">
             <span class="play-text">PLAY VIDEO</span>
@@ -195,9 +202,9 @@
     <div class="video-modal" id="videoModal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeVideo()">✕</button>
-            <iframe id="videoFrame" 
-                    src="about:blank" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            <iframe id="videoFrame"
+                    src="about:blank"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
             </iframe>
         </div>
@@ -266,14 +273,12 @@
                 </form>
                 <p class="privacy-text">By signing up to receive emails from Motto, you agree to our Privacy Policy. We treat your info responsibly.</p>
             </div>
-
             <div class="footer-contact">
                 <h4>Contact</h4>
                 <p>27 Division St, New York,<br>NY 10002, USA</p>
                 <p>+1 800 123 654 987</p>
                 <p>frisk.agency@mail.com</p>
             </div>
-
             <div class="footer-links">
                 <h4>Links</h4>
                 <ul>
@@ -285,7 +290,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>Copyright © 2024 Frisk</p>
             <div class="social-icons">
