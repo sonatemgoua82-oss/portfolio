@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Frisk Creative Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles spécifiques à la page blog */
+        .blog-page {
+            background-color: #f8f8f8;
+            min-height: 100vh;
+        }
+
+        .blog-hero {
+            background: linear-gradient(135deg, #000 0%, #333 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .blog-hero p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .blog-main {
+            display: grid;
+            gap: 40px;
+        }
+
+        .featured-article {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 40px;
+        }
+
+        .featured-badge {
+            background: #ffff00;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .featured-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .featured-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-category {
+            color: #0000ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .blog-sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .sidebar-widget {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .categories-list li {
+            margin-bottom: 12px;
+        }
+
+        .categories-list a {
+            color: #333;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .categories-list a:hover {
+            color: #0000ff;
+        }
+
+        .category-count {
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .popular-posts {
+            list-style: none;
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .popular-post img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .popular-post-content h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .popular-post-date {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #0000ff;
+            color: white;
+        }
+
+        .newsletter-sidebar {
+            background: linear-gradient(135deg, #0000ff, #000);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .newsletter-sidebar h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-sidebar p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .sidebar-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-form input {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .sidebar-form button {
+            background: #ffff00;
+            color: #000;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-form button:hover {
+            transform: translateY(-2px);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .pagination a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background: #0000ff;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .blog-hero h1 {
+                font-size: 56px;
+            }
+
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-content h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: 2fr 1fr;
+                gap: 60px;
+            }
+
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body class="blog-page">
+    <!-- Header (identique à votre page principale) -->
+    <header>
+        <div class="logo">Fr<span>i</span>sk</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="Projects.html">PROJECTS</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="blog.html" style="color: #00ff00;">BLOG</a></li>
+            </ul>
+        </nav>
+        <div class="search-icon" id="searchIcon">🔍</div>
+        <div class="search-container" id="searchContainer">
+            <input type="text" placeholder="Search..." id="searchInput">
+            <button id="closeSearch">✕</button>
+        </div>
+    </header>
+
+    <!-- Hero Section Blog -->
+    <section class="blog-hero">
+        <h1>Our Creative Blog</h1>
+        <p>Discover the latest trends in design, development and digital marketing. Tips, inspiration and case studies.</p>
+    </section>
+
+    <!-- Blog Content -->
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Main Content -->
+            <div class="blog-main">
+                <!-- Featured Article -->
+                <article class="featured-article">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop" alt="Modern interface design" class="featured-image">
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured</span>
+                        <h2>The Future of Interface Design in 2024: Trends and Innovations</h2>
+                        <p>Exploring new UI/UX design trends that are revolutionizing user experience. From glassmorphism to generative AI, discover what will define digital design this year.</p>
+                        <div class="featured-meta">
+                            <div class="author">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Author" class="author-avatar">
+                                <span>Marc Dubois</span>
+                            </div>
+                            <span>March 15, 2024</span>
+                            <div class="read-time">⏱️ 8 min read</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=200&fit=crop" alt="Web development" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Development</div>
+                            <h3>JavaScript Frameworks to Know in 2024</h3>
+                            <p>Comparison of modern frameworks: React, Vue, Angular and Svelte. Which one to choose for your next project?</p>
+                            <div class="article-meta">
+                                <span>March 12, 2024</span>
+                                <div class="read-time">⏱️ 6 min read</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=200&fit=crop" alt="Digital marketing" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Marketing</div>
+                            <h3>SEO Strategies for Creative Agencies</h3>
+                            <p>How to optimize your agency website to attract the right clients and increase your online visibility.</p>
+                            <div class="article-meta">
+                                <span>March 10, 2024</span>
+                                <div class="read-time">⏱️ 5 min read</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=200&fit=crop" alt="Branding" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Branding</div>
+                            <h3>Creating a Memorable Visual Identity</h3>
+                            <p>Essential steps to develop a strong and consistent brand that stands out from the competition.</p>
+                            <div class="article-meta">
+                                <span>March 8, 2024</span>
+                                <div class="read-time">⏱️ 7 min read</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=200&fit=crop" alt="Mobile applications" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Mobile</div>
+                            <h3>Mobile App Design: Best Practices</h3>
+                            <p>Complete guide to creating intuitive and engaging mobile interfaces for your users.</p>
+                            <div class="article-meta">
+                                <span>March 5, 2024</span>
+                                <div class="read-time">⏱️ 9 min read</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop" alt="Web performance" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Performance</div>
+                            <h3>Optimizing Website Loading Speed</h3>
+                            <p>Practical techniques to improve your site's performance and enhance user experience.</p>
+                            <div class="article-meta">
+                                <span>March 3, 2024</span>
+                                <div class="read-time">⏱️ 6 min read</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="article-card">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=400&h=200&fit=crop" alt="Social media" class="article-image">
+                        <div class="article-content">
+                            <div class="article-category">Social Media</div>
+                            <h3>Social Media Strategies for Brands</h3>
+                            <p>How to create engaging content that builds community and drives conversions.</p>
+                            <div class="article-meta">
+                                <span>March 1, 2024</span>
+                                <div class="read-time">⏱️ 5 min read</div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <!-- Newsletter -->
+                <div class="sidebar-widget newsletter-sidebar">
+                    <h3>Stay Updated</h3>
+                    <p>Get our latest articles and tips delivered directly to your inbox.</p>
+                    <form class="sidebar-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Categories -->
+                <div class="sidebar-widget">
+                    <h3>Categories</h3>
+                    <ul class="categories-list">
+                        <li><a href="#">UI/UX Design <span class="category-count">12</span></a></li>
+                        <li><a href="#">Development <span class="category-count">8</span></a></li>
+                        <li><a href="#">Digital Marketing <span class="category-count">6</span></a></li>
+                        <li><a href="#">Branding <span class="category-count">5</span></a></li>
+                        <li><a href="#">Mobile <span class="category-count">4</span></a></li>
+                        <li><a href="#">Strategy <span class="category-count">3</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Posts -->
+                <div class="sidebar-widget">
+                    <h3>Popular Posts</h3>
+                    <ul class="popular-posts">
+                        <li class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=100&h=100&fit=crop" alt="Popular post">
+                            <div class="popular-post-content">
+                                <h4>Secrets of Responsive Design</h4>
+                                <div class="popular-post-date">March 14, 2024</div>
+                            </div>
+                        </li>
+                        <li class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=100&h=100&fit=crop" alt="Popular post">
+                            <div class="popular-post-content">
+                                <h4>Web Performance Optimization</h4>
+                                <div class="popular-post-date">March 11, 2024</div>
+                            </div>
+                        </li>
+                        <li class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=100&h=100&fit=crop" alt="Popular post">
+                            <div class="popular-post-content">
+                                <h4>Storytelling for Brands</h4>
+                                <div class="popular-post-date">March 7, 2024</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tags -->
+                <div class="sidebar-widget">
+                    <h3>Tags</h3>
+                    <div class="tags-cloud">
+                        <a href="#" class="tag">UI Design</a>
+                        <a href="#" class="tag">React</a>
+                        <a href="#" class="tag">SEO</a>
+                        <a href="#" class="tag">Branding</a>
+                        <a href="#" class="tag">Mobile</a>
+                        <a href="#" class="tag">Accessibility</a>
+                        <a href="#" class="tag">Performance</a>
+                        <a href="#" class="tag">Animation</a>
+                        <a href="#" class="tag">Marketing</a>
+                        <a href="#" class="tag">Web Design</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">→</a>
+        </div>
+    </div>
+
+    <!-- Footer (identique à votre page principale) -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-newsletter">
+                <h3>Get valuable strategy, culture and brand insights straight to your inbox</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email here" required>
+                    <button type="submit">↗</button>
+                </form>
+                <p class="privacy-text">By signing up to receive emails from Motto, you agree to our Privacy Policy. We treat your info responsibly.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>27 Division St, New York,<br>NY 10002, USA</p>
+                <p>+1 800 123 654 987</p>
+                <p>frisk.agency@mail.com</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolios">Portfolios</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 Frisk</p>
+            <div class="social-icons">
+                <a href="#">f</a>
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+                <a href="#">🏀</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,8 +1,48 @@
+// Gestion de la recherche
+function initSearch() {
+    const searchIcon = document.getElementById('searchIcon');
+    const searchContainer = document.getElementById('searchContainer');
+    const closeSearch = document.getElementById('closeSearch');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchIcon && searchContainer) {
+        searchIcon.addEventListener('click', () => {
+            searchContainer.classList.toggle('active');
+            if (searchContainer.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+
+        closeSearch.addEventListener('click', () => {
+            searchContainer.classList.remove('active');
+            searchInput.value = '';
+        });
+
+        // Fermer la recherche en cliquant en dehors
+        document.addEventListener('click', (e) => {
+            if (!searchContainer.contains(e.target) && e.target !== searchIcon) {
+                searchContainer.classList.remove('active');
+            }
+        });
+
+        // Recherche à la soumission
+        searchContainer.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                alert(`Recherche pour: ${query}`);
+                searchInput.value = '';
+                searchContainer.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Animation du bandeau défilant
 function initBannerAnimation() {
     const bannerContent = document.querySelector('.banner-content');
     const bannerText = document.querySelector('.banner-text');
-    
+
     if (bannerContent && bannerText) {
         // Dupliquer le contenu pour créer une boucle infinie
         bannerContent.appendChild(bannerText.cloneNode(true));
@@ -13,7 +53,7 @@ function initBannerAnimation() {
 function initProjectsCarousel() {
     const dots = document.querySelectorAll('.dot');
     let currentDot = 0;
-
+    
     // Clic sur les dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -22,7 +62,7 @@ function initProjectsCarousel() {
             currentDot = index;
         });
     });
-
+    
     // Auto-rotation toutes les 3 secondes
     setInterval(() => {
         dots[currentDot].classList.remove('active');
@@ -55,7 +95,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -64,12 +104,12 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-
+    
     // Observer les éléments à animer
     const elementsToAnimate = document.querySelectorAll(
         '.service-card, .project-card, .blog-card, .award-item'
     );
-
+    
     elementsToAnimate.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
@@ -89,7 +129,7 @@ function initSmoothScroll() {
                 e.preventDefault();
                 return;
             }
-
+            
             const target = document.querySelector(href);
             
             if (target) {
@@ -109,8 +149,7 @@ function initVideoButton() {
     
     if (playButton) {
         playButton.addEventListener('click', () => {
-            alert('Ouverture de la vidéo... (fonctionnalité à implémenter)');
-            // Ici vous pouvez ouvrir une modale avec une vidéo YouTube/Vimeo
+            openVideo();
         });
     }
 }
@@ -133,8 +172,25 @@ function initParallaxEffect() {
 
 // Menu mobile responsive
 function initMobileMenu() {
-    // Si vous voulez ajouter un menu hamburger pour mobile
     const header = document.querySelector('header');
+    const nav = document.querySelector('nav');
+    
+    // Créer le bouton menu toggle pour mobile
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '☰';
+    header.appendChild(menuToggle);
+    
+    menuToggle.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+    
+    // Fermer le menu en cliquant sur un lien
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
     
     // Détection du scroll pour ajouter une ombre au header
     window.addEventListener('scroll', () => {
@@ -176,8 +232,46 @@ function initCounterAnimation() {
     });
 }
 
+// Animation vidéo pour la section video
+// Ouvrir la vidéo
+function openVideo() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    
+    // Remplace par ton URL YouTube (ajoute ?autoplay=1 pour lecture automatique)
+    videoFrame.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Fermer la vidéo
+function closeVideo() {
+    const modal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    
+    modal.classList.remove('active');
+    videoFrame.src = '';
+    document.body.style.overflow = 'auto';
+}
+
+// Fermer avec la touche Échap
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeVideo();
+    }
+});
+
+// Fermer en cliquant en dehors de la vidéo
+document.getElementById('videoModal').addEventListener('click', (e) => {
+    if (e.target.id === 'videoModal') {
+        closeVideo();
+    }
+});
+
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
+    initSearch();
     initBannerAnimation();
     initProjectsCarousel();
     initNewsletterForm();
@@ -201,54 +295,18 @@ window.addEventListener('resize', () => {
     }, 250);
 });
 
-// Animation spécifique pour la section servicess
+// Animation spécifique pour la section services
 document.addEventListener("DOMContentLoaded", () => {
-  const services = document.querySelector(".services-section");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        services.classList.add("in-view");
-      }
+    const services = document.querySelector(".services-section");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                services.classList.add("in-view");
+            }
+        });
     });
-  });
-
-  observer.observe(services);
+    
+    if (services) {
+        observer.observe(services);
+    }
 });
-
-// Animation vidéo pour la section video
-// Ouvrir la vidéo
-        function openVideo() {
-            const modal = document.getElementById('videoModal');
-            const videoFrame = document.getElementById('videoFrame');
-            
-            // Remplace par ton URL YouTube (ajoute ?autoplay=1 pour lecture automatique)
-            videoFrame.src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Fermer la vidéo
-        function closeVideo() {
-            const modal = document.getElementById('videoModal');
-            const videoFrame = document.getElementById('videoFrame');
-            
-            modal.classList.remove('active');
-            videoFrame.src = '';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Fermer avec la touche Échap
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeVideo();
-            }
-        });
-
-        // Fermer en cliquant en dehors de la vidéo
-        document.getElementById('videoModal').addEventListener('click', (e) => {
-            if (e.target.id === 'videoModal') {
-                closeVideo();
-            }
-        });
