@@ -44,8 +44,9 @@
         nav a {
             color: #000;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 16px;
             text-transform: uppercase;
+            font-weight: 700;
             letter-spacing: 1px;
         }
 
@@ -68,12 +69,18 @@
             background-color: #333;
         }
 
+        /* "About" en vert */
+nav ul li:nth-child(2) a {
+    color: #00ff00;
+}
+
         /* Breadcrumb */
         .breadcrumb {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px 40px;
-            font-size: 14px;
+            font-size: 18px;
+            font-weight: 700;
             color: #666;
         }
 
@@ -397,11 +404,11 @@
         <nav>
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
                 <li><a href="Projects.html">PROJECTS</a></li>
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
             </ul>
         </nav>
         <button class="contact-btn">CONTACT WITH US</button>
@@ -409,13 +416,13 @@
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
-        Home / Portfolio / App for Business
+        Home | Portfolio | App for Business
     </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="project-carousel">
-            <img src="image3.jpg" alt="Project Image" class="carousel-image">
+            <img src="./img/image3.jpg" alt="Project Image" class="carousel-image">
             <button class="carousel-btn prev">←</button>
             <button class="carousel-btn next">→</button>
         </div>
@@ -521,7 +528,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolios</a></li>
                 <li><a href="Projects.html">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>

@@ -5,55 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
-        /* Reset et styles de base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
 
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
+        /* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Header et navigation */
-        header {
-            background-color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* Header & Navigation */
+header {
+    background-color: transparent;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
 
-        nav ul li {
-            margin: 0 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
+.logo span {
+    color: #ffff00;
+}
+/* "Portfoglio" en vert */
+nav ul li:nth-child(3) a {
+    color: #00ff00;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin-left: 60px;
+}
 
-        nav ul li a:hover {
-            color: #666;
-        }
+nav a {
+    color:black;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* Cal to action button */
+.work-with-us-btn {
+    background-color: black;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.work-with-us-btn:hover {
+    background-color: #444;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    position:relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./img/image2.jpg');
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.hero-title {
+    font-size: 100px;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+    align-items: center;
+    letter-spacing: 2px;
+}
+
+/*      RESPONSIVE          */
+@media (max-width: 1024px) {
+    nav ul {
+        gap: 20px;
+        margin-left: 20px;
+    }
+
+    .hero-title {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+        position: absolute;
+        top: 80px;
+        right: 40px;
+        background: #000;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: black;
+    }
+
+    .hero-title {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 68px;
+    }
+}
 
         /* Section titre principal */
         .page-title {
@@ -115,6 +240,39 @@
             color: #666;
             font-size: 14px;
         }
+        /* Bandeau animé */
+.banner {
+background-color: blue;
+    color: white;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.banner-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+}
+
+.banner-text {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 30px;
+}
+
+.asterisk {
+    color: #ffff00;
+    margin: 0 15px;
+    font-size: 24px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 
         /* Bouton Load More */
         .load-more {
@@ -265,20 +423,35 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">PORTFOLIO</a></li>
-                    <li><a href="Projects.html">Project</a></li>
-                    <li><a href="#">BLOG</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Header -->
+   <header>
+        <div class="logo">Fr<span>i</span>sk</div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav id="navMenu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+    <button class="work-with-us-btn">WORK WITH US</button>
+</div>
+
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+    <h1 class="hero-title">Portfoglio</h1>
+          <div class="hero-image">       
+            </div>
+        </div>
+    </section>
+
 
     <div class="container">
         <div class="page-title">
@@ -339,9 +512,20 @@
         <div class="load-more">
             <button>LOAD MORE</button>
         </div>
-
-        <div class="flexibility">
-            <p>Failed Flexibility  We Give Unparalleled Flexibil</p>
+    </div>
+     <!-- Bandeau animé -->
+    <div class="banner">
+        <div class="banner-content">
+            <div class="banner-text">
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+                <span class="asterisk">✱</span>
+                We Give Unparalleled Flexibility
+            </div>
         </div>
     </div>
 
@@ -368,12 +552,13 @@
                 <div class="footer-links">
                     <h3>Links</h3>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
                 </div>
             </div>
             <div class="copyright">

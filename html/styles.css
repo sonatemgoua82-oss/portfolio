@@ -4,12 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-  --stair-step: 40px;
-  --primary-color: #ffff00;  
-  --text-color: #fff;
-  --bg-color: #000;
+    --stair-step: 40px;
+    --primary-color: #ffff00;  
+    --text-color: #fff;
+    --bg-color: #000;
 }
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
     background-color: #f5f5f5;
@@ -42,17 +44,16 @@ header {
     color: #ffff00;
 }
 
-/* Navigation Navbar */
+/* Navigation */
 nav {
     position: fixed;
     top: 0;
     left: -100%;
     width: 80%;
     height: 100vh;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
     transition: left 0.3s ease;
     z-index: 1001;
-    padding-top: 60px;
 }
 
 nav.active {
@@ -75,10 +76,8 @@ nav a {
     letter-spacing: 1px;
     transition: color 0.3s;
     display: block;
-    padding: 10px 0;
 }
 
-/* HOME en vert */
 nav ul li:first-child a {
     color: #00ff00;
 }
@@ -87,6 +86,7 @@ nav a:hover {
     color: #ffff00;
 }
 
+/* Search */
 .search-icon {
     color: white;
     font-size: 18px;
@@ -94,7 +94,6 @@ nav a:hover {
     z-index: 1002;
 }
 
-/* Search Container */
 .search-container {
     position: absolute;
     top: 100%;
@@ -129,7 +128,6 @@ nav a:hover {
     padding: 5px;
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
     display: block;
     background: none;
@@ -140,56 +138,52 @@ nav a:hover {
     z-index: 1002;
 }
 
-/* Hero Section */
+/* Hero Section  */
 .hero-section {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #000;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 20px;
-    gap: 20px;
-    }
-
-.hero-content {
     position: relative;
-    z-index: 2;
-    text-align: left;
-    padding: 40px 20px;
-    order: 2;
     width: 100%;
-    background-color: #000;
-}
-
-.hero-content h1 {
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 10px;
+    height: 100vh;
+    background: url('./img/image4.jpg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     
 }
 
-/* Stair-step effect - effet escalier */
+.hero-content {
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    color: #fff;
+
+}
+
 .hero-content h1 span {
-  display: block;
+    display: block;
 }
 
 .hero-content h1 span:nth-child(2) {
-  margin-left: calc(var(--stair-step) * 1);
+    margin-left: calc(var(--stair-step) * 1);
 }
 
 .hero-content h1 span:nth-child(3) {
-  margin-left: calc(var(--stair-step) * 2);
+    margin-left: calc(var(--stair-step) * 2);
 }
-  
+
 .hero-content p {
     font-size: 16px;
-    line-height: 1.6;
-    color: #ccc;
-    margin-bottom: 30px;
+    line-height: 1.4;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+    max-width: 500px;
 }
 
 .cta-button {
@@ -204,7 +198,8 @@ nav a:hover {
     letter-spacing: 1px;
     border-radius: 5px;
     transition: all 0.4s ease;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .cta-button:hover {
@@ -212,50 +207,28 @@ nav a:hover {
     box-shadow: 0 8px 20px rgba(255, 255, 0, 0.3);
 }
 
-.hero-image {
-    position: relative;
-    width: 100%;
-    height: 30vh;
-    min-height: 400px;
-    order: 1;
-    z-index: 1;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.hero-image img:hover {
-    transform: scale(1.05);
-}
-
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
-    margin-top: 20px;
+    gap: 8px;
+    text-align: left;
 }
 
 .contact-info div {
+    background-color: #000;
     letter-spacing: 1px;  
-    line-height: 1.6;
+    line-height: 1.4;
     font-size: 14px;
+    font-weight: 500;
+    color:white;
 }
 
 /* Bandeau animé */
 .banner {
-    background-color: #0000ff;
+
     color: white;
     overflow: hidden;
     padding: 15px 0;
-    margin: 0;
-    position: relative;
-    width: 100%;
 }
 
 .banner-content {
@@ -288,8 +261,6 @@ nav a:hover {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
-    position: relative;
-    z-index: 10;
 }
 
 .services-section h2 {
@@ -349,13 +320,10 @@ nav a:hover {
     border-color: #0000ff;
 }
 
-/* Brand Services Section */
+/* Brand Services */
 .brand-services {
     display: flex;
     flex-direction: column;
-    min-height: auto;
-    gap: 0;
-    padding: 0;
     background-color: #fdfdfd;
     border-radius: 20px;
     overflow: hidden;
@@ -378,7 +346,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .brand-content h2 {
@@ -399,7 +366,6 @@ nav a:hover {
     background-color: white;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .service-list li {
@@ -433,7 +399,6 @@ nav a:hover {
 }
 
 .projects-carousel {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -570,7 +535,6 @@ nav a:hover {
     z-index: 1;
 }
 
-/* Overlay sombre */
 .video-overlay {
     position: absolute;
     top: 0;
@@ -581,7 +545,6 @@ nav a:hover {
     z-index: 2;
 }
 
-/* Bouton Play */
 .play-button {
     position: relative;
     z-index: 3;
@@ -595,12 +558,10 @@ nav a:hover {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .play-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
 }
 
 .play-button::before {
@@ -622,7 +583,7 @@ nav a:hover {
     margin-top: 10px;
 }
 
-/* Modal Vidéo */
+/* Video Modal */
 .video-modal {
     display: none;
     position: fixed;
@@ -914,10 +875,13 @@ footer {
 }
 
 /* ========================================
-   📱 RESPONSIVE DESIGN - TABLETTES
+   📱 RESPONSIVE DESIGN
    ======================================== */
+
+/* Mobile First - Styles de base au-dessus */
+
+/* Tablettes */
 @media (min-width: 768px) {
-    /* Header */
     header {
         padding: 20px 30px;
     }
@@ -926,7 +890,6 @@ footer {
         font-size: 24px;
     }
     
-    /* Navigation Tablette */
     nav {
         position: static;
         width: auto;
@@ -950,85 +913,60 @@ footer {
         display: none;
     }
     
-    /* Hero Section */
-    @media (min-width: 768px) {
-.hero-section {
-    padding: 60px 30px;
-    gap: 30px;
-}
-
-.hero-content {
-    padding: 0;
-}
-.hero-content h1 {
-        font-size: 48px;
+    .hero-content {
+        margin-left: 8%;
+    }
+    
+    .hero-content h1 {
+        font-size: 56px;
     }
     
     .hero-content p {
-        font-size: 20px;
+        font-size: 18px;
     }
-
-.hero-image {
-    height: 400px;
-}
     
     .contact-info {
         flex-direction: row;
         justify-content: space-between;
-        text-align: left;
+        max-width: 600px;
     }
     
-    /* Services */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
     }
     
-    .services-section h2 {
+    .services-section h2,
+    .brand-content h2,
+    .projects-section h2,
+    .blog-section h2 {
         font-size: 36px;
     }
     
-    /* Brand Services */
     .brand-services {
         margin: 60px 30px;
-    }
-    
-    .brand-content h2 {
-        font-size: 36px;
-    }
-    
-    /* Projects */
-    .projects-section h2 {
-        font-size: 36px;
     }
     
     .project-card {
         min-width: 320px;
     }
     
-    /* Awards */
     .award-item {
         flex-direction: row;
-        grid-template-columns: 80px 1fr 200px;
-        gap: 30px;
+        justify-content: space-between;
         align-items: center;
+        gap: 30px;
     }
     
     .award-tag {
         text-align: right;
         margin-top: 0;
+        min-width: 200px;
     }
     
-    /* Blog */
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .blog-section h2 {
-        font-size: 36px;
-    }
-    
-    /* Partners */
     .partners-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -1045,7 +983,15 @@ footer {
         border-bottom: none;
     }
     
-    /* Footer */
+    .banner-text {
+        font-size: 28px;
+    }
+    
+    .asterisk {
+        font-size: 40px;
+        margin: 0 30px;
+    }
+    
     .footer-content {
         grid-template-columns: 2fr 1fr 1fr;
         gap: 50px;
@@ -1058,11 +1004,8 @@ footer {
     }
 }
 
-/* ========================================
-   📱 RESPONSIVE DESIGN - DESKTOP
-   ======================================== */
+/* Desktop */
 @media (min-width: 1024px) {
-    /* Header */
     header {
         padding: 20px 40px;
     }
@@ -1075,24 +1018,14 @@ footer {
         font-size: 18px;
     }
     
-    /* Hero Section */
-    @media (min-width: 1024px) {
-  .hero-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        padding: 80px 40px;
-        min-height: 70vh;
-        padding-top: 140px;
-        margin-top: -80px;
-        gap: 10px;   
-     }
+    .hero-section {
+        padding: 0 40px;
+        min-height: 700px;
+    }
     
-     
     .hero-content {
-        text-align: left;
-        order: 1;
-        background-color: transparent;
+        margin-left: 10%;
+        max-width: 600px;
     }
     
     .hero-content h1 {
@@ -1100,33 +1033,26 @@ footer {
     }
     
     .hero-content p {
-        font-size: 28px;
+        font-size: 20px;
     }
-    .hero-image {
-        height: 100%;
-        min-height: 600px;
-        order: 2;
-    }
-    }
-
-    /* Services */
+    
     .services-section {
         padding: 120px 40px 80px;
     }
     
     .services-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
     
-    .services-section h2 {
+    .services-section h2,
+    .brand-content h2,
+    .projects-section h2,
+    .blog-section h2 {
         font-size: 42px;
     }
     
-    /* Brand Services */
     .brand-services {
-        grid-template-columns: 1fr 1fr;
-        display: grid;
+        flex-direction: row;
         margin: 80px 40px;
     }
     
@@ -1140,30 +1066,8 @@ footer {
         padding: 60px;
     }
     
-    .brand-content h2 {
-        font-size: 42px;
-    }
-    
-    /* Projects */
-    .projects-section {
-        padding: 80px 40px;
-    }
-    
-    .projects-section h2 {
-        font-size: 42px;
-    }
-    
-    /* Awards */
-    .awards-section {
-        padding: 80px 40px;
-    }
-    
-    .award-item {
-        grid-template-columns: 80px 1fr 200px;
-        gap: 40px;
-    }
-    
-    /* Blog */
+    .projects-section,
+    .awards-section,
     .blog-section {
         padding: 80px 40px;
     }
@@ -1173,11 +1077,6 @@ footer {
         gap: 40px;
     }
     
-    .blog-section h2 {
-        font-size: 42px;
-    }
-    
-    /* Team Video */
     .team-video-section {
         height: 600px;
     }
@@ -1197,7 +1096,6 @@ footer {
         font-size: 14px;
     }
     
-    /* CTA */
     .cta-section {
         padding: 100px 40px;
     }
@@ -1206,7 +1104,6 @@ footer {
         font-size: 56px;
     }
     
-    /* Footer */
     footer {
         padding: 60px 40px 30px;
     }
@@ -1216,14 +1113,76 @@ footer {
     }
 }
 
-/* Bandeau animé - Desktop */
-@media (min-width: 768px) {
-    .banner-text {
+/* Mobile spécifique */
+@media (max-width: 767px) {
+    .hero-section {
+        background-attachment: scroll;
+        min-height: 500px;
+        padding: 0 15px;
+    }
+    
+    .hero-content {
+        margin-left: 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content h1 span:nth-child(2) {
+        margin-left: calc(var(--stair-step) * 0.5);
+    }
+    
+    .hero-content h1 span:nth-child(3) {
+        margin-left: calc(var(--stair-step) * 1);
+    }
+    
+    .hero-content p {
+        font-size: 14px;
+    }
+    
+    nav {
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+}
+
+/* Petits mobiles */
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 400px;
+    }
+    
+    .hero-content h1 {
         font-size: 28px;
     }
     
-    .asterisk {
-        font-size: 40px;
-        margin: 0 30px;
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    .service-card,
+    .blog-card {
+        padding: 20px;
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1920px) {
+    .hero-section {
+        min-height: 800px;
+    }
+    
+    .hero-content {
+        margin-left: 15%;
+        max-width: 700px;
+    }
+    
+    .hero-content h1 {
+        font-size: 76px;
+    }
+    
+    .hero-content p {
+        font-size: 24px;
     }
 }
