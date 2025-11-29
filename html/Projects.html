@@ -3,431 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frisk-Creative Agency & Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        /* Header */
-        header {
-            background-color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #ffff00;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
-        nav a {
-            color: #000;
-            text-decoration: none;
-            font-size: 16px;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            opacity: 0.6;
-        }
-
-        .contact-btn {
-            background-color: #000;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-btn:hover {
-            background-color: #333;
-        }
-
-        /* "About" en vert */
-nav ul li:nth-child(2) a {
-    color: #00ff00;
-}
-
-        /* Breadcrumb */
-        .breadcrumb {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px 40px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #666;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px 60px;
-        }
-
-        .project-carousel {
-            position: relative;
-            background-color: white;
-            border-radius: 20px;
-            overflow: hidden;
-            height: 500px;
-        }
-
-        .carousel-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .carousel-btn:hover {
-            background-color: #f0f0f0;
-        }
-
-        .carousel-btn.prev {
-            left: 20px;
-        }
-
-        .carousel-btn.next {
-            right: 20px;
-        }
-
-        /* Content Section */
-        .content-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-
-        .main-content h1 {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        .main-content p {
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 40px 0 20px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            height: fit-content;
-        }
-
-        .info-group {
-            margin-bottom: 30px;
-        }
-
-        .info-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .info-value {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        /* Navigation buttons */
-        .post-navigation {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 40px;
-        }
-
-        .nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-btn:hover {
-            opacity: 0.6;
-        }
-
-        /* Bandeau animé */
-        .banner {
-            background-color: #0000ff;
-            color: white;
-            overflow: hidden;
-            padding: 20px 0;
-            position: relative;
-            margin-top: 60px;
-        }
-
-        .banner-content {
-            display: flex;
-            white-space: nowrap;
-            animation: scroll 20s linear infinite;
-        }
-
-        .banner-text {
-            display: flex;
-            align-items: center;
-            font-size: 32px;
-            font-weight: bold;
-            padding-right: 50px;
-        }
-
-        .asterisk {
-            color: #ffff00;
-            margin: 0 30px;
-            font-size: 40px;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Footer Section */
-        .footer-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-        }
-
-        .newsletter h2 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            line-height: 1.3;
-        }
-
-        .email-form {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .email-input {
-            width: 100%;
-            padding: 15px 50px 15px 0;
-            border: none;
-            border-bottom: 2px solid #000;
-            background: transparent;
-            font-size: 16px;
-            color: #999;
-            outline: none;
-        }
-
-        .submit-btn {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        .privacy-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .contact-info h3 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        .address, .phone, .email {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .links h3 {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .links ul {
-            list-style: none;
-        }
-
-        .links li {
-            margin-bottom: 12px;
-        }
-
-        .links a {
-            color: #000;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px 40px;
-            border-top: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .copyright {
-            font-size: 14px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: #000;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            opacity: 0.6;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .content-section,
-            .footer-section {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .banner-text {
-                font-size: 24px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Projects page/Frisk-Creative Agency & Portfolio</title>
 </head>
 <body>
+    
     <!-- Header -->
-    <header>
-        <div class="logo">
-            Fr<span>i</span>sk
-        </div>
-        <nav>
+   <header>
+        <div class="logo">Fr<span>i</span>sk</div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav id="navMenu">
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="Projects.html">PROJECTS</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
                 <li><a href="portfolio.html">PORTFOLIO</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
                 <li><a href="blog.html">BLOG</a></li>
             </ul>
         </nav>
-        <button class="contact-btn">CONTACT WITH US</button>
+        <div class="nav-right">
+    <button class="work-with-us-btn">WORK WITH US</button>
+</div>
     </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        Home | Portfolio | App for Business
-    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="project-carousel">
-            <img src="./img/image3.jpg" alt="Project Image" class="carousel-image">
-            <button class="carousel-btn prev">←</button>
-            <button class="carousel-btn next">→</button>
+        <div class="hero-content">
+    <h1 class="hero-title">Projets</h1>
+          <div class="hero-image">       
+            </div>
         </div>
     </section>
+      
+      <!-- Breadcrumb -->
+<div class="breadcrumb">
+   Home | Portfolio | App for Business
+</div>
 
+<!-- Carousel Section -->
+<section class="project-carousel">
+    <div class="carousel-wrapper">
+        <img src="./img/caroussel1.jpg" alt="Project Image 1" class="carousel-image active">
+        <img src="./img/caroussel2.jpg" alt="Project Image 2" class="carousel-image">
+        <img src="./img/caroussel3.jpg" alt="Project Image 3" class="carousel-image">
+        <img src="./img/caroussel4.jpg" alt="Project Image 4" class="carousel-image">
+        <img src="./img/caroussel5.jpg" alt="Project Image 5" class="carousel-image">
+        <img src="./img/caroussel6.jpg" alt="Project Image 6" class="carousel-image">
+        <img src="./img/caroussel7.jpg" alt="Project Image 7" class="carousel-image">
+
+        <button class="carousel-btn prev">←</button>
+        <button class="carousel-btn next">→</button>
+    </div>
+</section>
+
+    
     <!-- Content Section -->
     <section class="content-section">
         <div class="main-content">
@@ -536,46 +167,14 @@ nav ul li:nth-child(2) a {
 
     <!-- Footer Bottom -->
     <div class="footer-bottom">
-        <div class="copyright">Copyright © 2024</div>
+        <div class="copyright">Copyright © 2024 Frisk all right reserved</div>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Instagram">📷</a>
-            <a href="#" aria-label="Twitter">🐦</a>
-            <a href="#" aria-label="Dribbble">🏀</a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </div>
-
-    <script>
-        // Animation du bandeau
-        const bannerContent = document.querySelector('.banner-content');
-        const bannerText = document.querySelector('.banner-text');
-        bannerContent.appendChild(bannerText.cloneNode(true));
-
-        // Carousel
-        const carouselImages = [
-            'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&h=500&fit=crop',
-            'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=500&fit=crop',
-            'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=500&fit=crop'
-        ];
-        let currentIndex = 0;
-
-        document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
-            document.querySelector('.carousel-image').src = carouselImages[currentIndex];
-        });
-
-        document.querySelector('.carousel-btn.next').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % carouselImages.length;
-            document.querySelector('.carousel-image').src = carouselImages[currentIndex];
-        });
-
-        // Formulaire newsletter
-        document.querySelector('.email-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.querySelector('.email-input').value;
-            alert(`Merci pour votre inscription avec l'email: ${email}`);
-            document.querySelector('.email-input').value = '';
-        });
-    </script>
+    <script src="projects.js"></script>
 </body>
 </html>
