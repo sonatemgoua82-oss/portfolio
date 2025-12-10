@@ -78,7 +78,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 20px;
     display: block;
     padding: 8px 0;
 }
@@ -102,6 +102,7 @@ nav ul li:nth-child(6) a {
 /* Bouton CTA caché sur mobile par défaut */
 .nav-right {
     display: none;
+
 }
 
 .work-with-us-btn {
@@ -458,7 +459,7 @@ nav ul li:nth-child(6) a {
     color: #000;
 }
 
-/* ===== PAGINATION ===== */
+/* PAGINATION  */
 .pagination {
     text-align: center;
     margin: 40px 0;
@@ -486,7 +487,7 @@ nav ul li:nth-child(6) a {
     font-weight: 600;
 }
 
-/* ===== FOOTER (Mobile First) ===== */
+/* FOOTER risponsive */
 footer {
     background: #666;
     color: #fff;
@@ -608,7 +609,7 @@ footer {
     color: #ffff00;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* Responsive media queries */
 
 /* Tablettes (700px+) */
 @media (min-width: 700px) {

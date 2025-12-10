@@ -514,38 +514,40 @@ nav a:hover {
 }
 
 /* Partners Section */
+
 .partners-section {
-    background-color: white;
-    padding: 60px 40px;
+    padding: 40px 0;
+    background: #fff;
+
 }
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0;
+    align-items: center;
+    justify-items: center;
+    max-width: 1000px;
     margin: 0 auto;
-    border: 1px solid #ddd;
+    border: 1px solid #000;
+
 }
 
 .partner-logo {
-    padding: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    height: 120px;  
+    padding: 20px;
+    max-width: 140px;
+    opacity: 0.8;
+    transition: 0.3s ease;
+
 }
 
-.partner-logo:nth-child(4n) {
-    border-right: none;
+.partner-logo :hover {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2)); /*ombre légère au survol */
 }
 
-.partner-logo:nth-last-child(-n+4) {
-    border-bottom: none;
-}
 
 /* CTA Section */
 .cta-section {
