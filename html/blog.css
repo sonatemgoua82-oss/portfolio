@@ -46,7 +46,7 @@ header {
 }
 
 .logo span {
-    color: #ffff00;
+    color:  #ffd700;
 }
 
 /* Navigation cachée par défaut sur mobile */
@@ -108,14 +108,14 @@ nav ul li:nth-child(6) a {
 .work-with-us-btn {
     background-color: black;
     color: white;
-    padding: 15px 25px;
+    padding: 20px 30px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
     transition: background-color 0.3s ease;
-    font-size: 14px;
+    font-size: 15px;
     white-space: nowrap;
 }
 
@@ -489,7 +489,7 @@ nav ul li:nth-child(6) a {
 
 /* FOOTER risponsive */
 footer {
-    background: #666;
+    background: #4a654a;
     color: #fff;
     padding: 30px 20px;
     margin-top: 50px;
@@ -530,7 +530,6 @@ footer {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
 .newsletter-form button:hover {
